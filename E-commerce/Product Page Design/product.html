@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Product</title>
+    <link rel="stylesheet" href="styleproduct.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="gallery">
+                <img src="images/kaos putih.jpeg" alt="product 1" id="productImg">
+                <div class="controls">
+                    <span class="btn active"></span>
+                    <span class="btn"></span>
+                    <span class="btn"></span>
+                </div>
+            </div>
+            <div class="details">
+                <h1>Casual T Shirt</h1>
+                <h2>Rp. 150,000</h2>
+                <h3>Diskon 10%</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit autem consequatur nisi,
+                    provident asperiores, facilis dicta praesentium vel, quasi quibusdam perspiciatis accusamus
+                    quaecorporis porro ullam a delectus neque similique!</p>
+                <form>
+                    <div class="size-select">
+                        <p>Size</p>
+                        <label for="small">
+                            <input type="radio" name="size" id="small">
+                            <span>S</span>
+                        </label>
+                        <label for="medium">
+                            <input type="radio" name="size" id="medium">
+                            <span>M</span>
+                        </label>
+                        <label for="large">
+                            <input type="radio" name="size" id="large">
+                            <span>L</span>
+                        </label>
+                        <label for="x-large">
+                            <input type="radio" name="size" id="x-large">
+                            <span>XL</span>
+                        </label>
+                        <label for="xx-large">
+                            <input type="radio" name="size" id="xx-large">
+                            <span>XXL</span>
+                        </label>
+                    </div>
+
+                    <div class="color-select">
+                        <p>Color</p>
+                        <label for="white">
+                            <input type="radio" name="color" id="white" data-image="images/kaos putih.jpeg">
+                            <span class="color-1"></span>
+                        </label>
+                        <label for="gray">
+                            <input type="radio" name="color" id="gray" data-image="images/kaos abu abu.jpg">
+                            <span class="color-2"></span>
+                        </label>
+                        <label for="black">
+                            <input type="radio" name="color" id="black" data-image="images/kaos hitam.jpeg">
+                            <span class="color-3"></span>
+                        </label>
+                        <label for="blue">
+                            <input type="radio" name="color" id="blue" data-image="images/kaos biru.jpeg">
+                            <span class="color-4"></span>
+                        </label>
+                    </div>
+                    <div class="quantity-select">
+                        <p>Quantity</p>
+                        <input type="number" id="quantityInput" value="1" min="1" max="20">
+                        <p id="stockInfo"></p>
+                    </div>
+                    <a href="cart.html"><button type="button" id="buyButton">Tambahkan ke keranjang</button></a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="scriptproduct.js"></script>
+</body>
+
+</html>
