@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form div {
+            margin: 10px 0;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Food Ordering App</h1>
+        <form id="orderForm">
+            <div>
+                <label for="food">Choose a food:</label>
+                <select id="food">
+                    <option value="0">-- Select Food --</option>
+                    <option value="50">Burger - $50</option>
+                    <option value="80">Pizza - $80</option>
+                    <option value="30">Sandwich - $30</option>
+                </select>
+            </div>
+            <div>
+                <label for="drink">Choose a drink:</label>
+                <select id="drink">
+                    <option value="0">-- Select Drink --</option>
+                    <option value="20">Soda - $20</option>
+                    <option value="25">Juice - $25</option>
+                    <option value="10">Water - $10</option>
+                </select>
+            </div>
+            <button type="button" id="orderButton">Order Now</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("orderButton").onclick = function() {
+            const foodPrice = parseInt(document.getElementById("food").value);
+            const drinkPrice = parseInt(document.getElementById("drink").value);
+
+            let totalPrice = foodPrice + drinkPrice;
+            let discount = 0;
+
+            // Apply discount if total price is over 100
+            if (totalPrice > 100) {
+                discount = totalPrice * 0.1; // 10% discount
+                totalPrice -= discount;
+            }
+
+            // Display result
+            const resultDiv = document.getElementById("result");
+            if (totalPrice > 0) {
+                resultDiv.innerHTML = `
+                    Total: $${foodPrice + drinkPrice}<br>
+                    Discount: $${discount.toFixed(2)}<br>
+                    Final Price: $${totalPrice.toFixed(2)}
+                `;
+            } else {
+                resultDiv.innerHTML = "Please select both food and drink!";
+            }
+        };
+    </script>
+</body>
+</html>
